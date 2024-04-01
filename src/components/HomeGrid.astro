@@ -1,0 +1,34 @@
+---
+
+import { getCollection } from 'astro:content';
+
+const videoCollection = await getCollection('video');
+---
+<section class="h-screen mx-auto">
+    <div class="grid grid-cols-3 gap-3">
+        {videoCollection.map((video) => (
+                <div id="videoCard" class="bg-local h-96 w-96">
+                    {video.data.title}
+                </div>     
+            ))
+        }
+        
+    
+    </div>
+</section>
+
+
+<style>
+    #videoCard {
+        background-image: url("/thumbs/oakcreek.png");
+    }
+</style>
+
+
+
+  
+<!-- <YouTube id="https://www.youtube.com/watch?v=LJ5GbTywYXo&t=1s"/>
+<YouTube id="https://www.youtube.com/watch?v=THZDI01_KjE"/>
+<YouTube id="https://www.youtube.com/watch?v=sAQQrae9ZjI" poster="/thumbs/monsoon-microburst.png"/>
+<YouTube id="https://www.youtube.com/shorts/cmPx4UcWqtw" poster="/thumbs/cloud-show.png"/>
+<YouTube id="https://www.youtube.com/watch?v=hbARBGGh_z4"/> -->
