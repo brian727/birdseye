@@ -1,10 +1,25 @@
 ---
-import { getCollection } from 'astro:content';
-const videoCollection = await getCollection('video');
+
+
 ---
 
-<div class="grid grid-cols-2 md:grid-cols-3 gap-4 container">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 ">
     <div class="ytlink" data-link="SdT70VZsXdo?si=QpK9IUqZ7usV6i6n">
+        <img class="h-auto max-w-full rounded-lg" src="thumbs/oakcreek.png" alt="">
+    </div>
+    <div class="ytlink" data-link="LJ5GbTywYXo">
+        <img class="h-auto max-w-full rounded-lg" src="/thumbs/santacruz.png" alt="">
+    </div>
+    <div class="ytlink" data-link="q-OdRz_7RqQ">
+        <img class="h-auto max-w-full rounded-lg" src="thumbs/monsooncloud.png" alt="">
+    </div>
+    <div class="ytlink" data-link="q_Q8vVxvOs4">
+        <img class="h-auto max-w-full rounded-lg" src="" alt="">
+    </div>
+    <div class="ytlink" data-link="">
+        <img class="h-auto max-w-full rounded-lg" src="thumbs/oakcreek.png" alt="">
+    </div>
+    <div class="ytlink" data-link="">
         <img class="h-auto max-w-full rounded-lg" src="thumbs/oakcreek.png" alt="">
     </div>
   
@@ -32,15 +47,23 @@ const videoCollection = await getCollection('video');
 
     ytLinks.forEach((link) => {
         link.addEventListener("click", () => {
-            ytOverlay.classList.add("active");
-            let videoLink = `https://www.youtube.com/embed/${link.dataset.link}`;
-            ytPopup.src = videoLink;
+            if (ytOverlay) {
+                ytOverlay.classList.add("active");
+            }
+            let videoLink = `https://www.youtube.com/embed/${(link as HTMLElement).dataset.link}`;
+            if(ytPopup) {
+                let ytPopupIframe = ytPopup as HTMLIFrameElement;
+                ytPopupIframe.src = videoLink;
+            }
         });
     });
 
-    ytOverlay.addEventListener("click", () => {
-        ytOverlay.classList.remove("active");
+    if(ytOverlay) {
+        ytOverlay.addEventListener("click", () => {
+            ytOverlay.classList.remove("active");
     })
+    }
+
 </script>
 
 
