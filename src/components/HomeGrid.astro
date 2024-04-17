@@ -1,0 +1,125 @@
+---
+
+
+---
+
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 ">
+    <div class="ytlink" data-link="SdT70VZsXdo">
+        <img class="h-auto max-w-full rounded-lg" src="thumbs/oakcreek.png" alt="">
+    </div>
+    <div class="ytlink" data-link="LJ5GbTywYXo">
+        <img class="h-auto max-w-full rounded-lg" src="/thumbs/santacruz.png" alt="">
+    </div>
+    <div class="ytlink" data-link="JGAWC5TbgfI">
+        <img class="h-auto max-w-full rounded-lg" src="thumbs/courthouse.png" alt="">
+    </div>
+    <div class="ytlink" data-link="j5qJFPJwZTI">
+        <img class="h-auto max-w-full rounded-lg" src="thumbs/bartlett.png" alt="">
+    </div>
+    <div class="ytlink" data-link="snWKG5sHPd0">
+        <img class="h-auto max-w-full rounded-lg" src="thumbs/tvfalls.png" alt="">
+    </div>
+    <div class="ytlink" data-link="lZUujl2Qccc">
+        <img class="h-auto max-w-full rounded-lg" src="thumbs/incinridge.png" alt="">
+    </div>
+    <div class="ytlink" data-link="_kFAYF_vaR4">
+        <img class="h-auto max-w-full rounded-lg" src="thumbs/7cats.png" alt="">
+    </div>
+   
+  
+</div> 
+
+<div class="yt_overlay">
+    <div class="yt_popup pt-10">
+        <iframe
+            src="https://www.youtube.com/embed/" 
+            title="YouTube video player" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+    </div>
+</div>
+
+<script>
+    const ytOverlay = document.querySelector(".yt_overlay");
+    const ytLinks = document.querySelectorAll(".ytlink");
+    const ytPopup = document.querySelector(".yt_popup iframe");
+    
+    ytLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            if (ytOverlay) {
+                ytOverlay.classList.add("active");
+            }
+            let videoLink = `https://www.youtube.com/embed/${(link as HTMLElement).dataset.link}`;
+            if(ytPopup) {
+                let ytPopupIframe = ytPopup as HTMLIFrameElement;
+                ytPopupIframe.src = videoLink;
+            }
+        });
+    });
+
+    if(ytOverlay) {
+        ytOverlay.addEventListener("click", () => {
+            ytOverlay.classList.remove("active");
+    })
+    }
+
+</script>
+
+<style>
+    .ytlink {
+        cursor: pointer;
+    }
+
+    .yt_overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.6);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 400ms ease;
+    }
+
+    .yt_overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .yt_popup {
+        position: fixed;
+        width: 80%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+        transition: all 400ms ease;
+    }
+
+    .yt_overlay.active .yt_popup {
+        transform: translate(-50%, 0);
+    }
+
+    .yt_popup iframe {
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<!-- <YouTube id="https://www.youtube.com/watch?v=LJ5GbTywYXo&t=1s"/>
+<YouTube id="https://www.youtube.com/watch?v=THZDI01_KjE"/>
+<YouTube id="https://www.youtube.com/watch?v=sAQQrae9ZjI" poster="/thumbs/monsoon-microburst.png"/>
+<YouTube id="https://www.youtube.com/shorts/cmPx4UcWqtw" poster="/thumbs/cloud-show.png"/>
+<YouTube id="https://www.youtube.com/watch?v=hbARBGGh_z4"/> -->
+
+

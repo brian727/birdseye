@@ -1,0 +1,50 @@
+---
+
+---
+
+
+<section id="hero-container" class=" flex justify-center h-full">
+    <video id="hero-video" muted autoplay loop>
+        <source src="/video/heroloop.mp4" type="video/mp4">
+    </video>
+    <div id="hero-text" class="">
+        <h1>BirdsEye</h1>
+        <p>Aerial Photography</p>
+    </div>
+</section>
+
+
+
+
+
+
+
+<style>
+    @import "https://unpkg.com/open-props"; 
+    @import "https://unpkg.com/open-props/normalize.min.css";
+   
+    h1 {
+        font-size: var(--font-size-8);
+        font-family: var(--font-mono);
+    }
+
+   
+
+    #hero-container {
+        position: relative;
+        min-width: 100%;
+    }
+
+    #hero-video {
+        width: 100%;
+    }
+
+    #hero-text {
+        position: absolute;
+        text-align: center;
+   
+        padding-top: 15rem;
+        
+    }
+
+</style>
