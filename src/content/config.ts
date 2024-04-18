@@ -9,6 +9,8 @@ const videos = defineCollection({
         youtube: z.string(),
         thumbnail: z.string(),
         pubDate: z.date().optional(),
+        ytId: z.string(),
+        ytThumbnail: z.string(),
     }),
 });
 
