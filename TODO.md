@@ -13,4 +13,7 @@
 
 YOUTUBE THUMBNAIL SIZE: 1280x720
 
+API KEY2 AIzaSyDJZkR8ABlOIlX7vKyYnaa5tEVKlEp81Ik
+CHANNEL ID
+
 traversy media on api <https://www.youtube.com/watch?v=r-yxNNO1EI8>

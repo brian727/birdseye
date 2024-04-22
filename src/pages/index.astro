@@ -1,19 +1,20 @@
 ---
 
 import Nav from '../components/Nav.astro';
-import Hero from '../components/Hero.astro';
+import Hero2 from '../components/Hero2.astro';
+
 import Card from '../components/Card.astro';
 import Modal from '../components/Modal.astro';
-import HomeGrid from '../components/HomeGrid.astro';
+import HomeGrid2 from '../components/HomeGrid2.astro';
 import Footer from '../components/Footer.astro';
-import { YouTube } from '@astro-community/astro-embed-youtube';
+import { YouTube } from '@astro-community/astro-embed-youtube'; 
 import { getCollection } from 'astro:content';
 
 const videos = await getCollection('video');
 ---
 <Nav/>
-<Hero/>
+<Hero2/>
 
-<HomeGrid/>
+<HomeGrid2/>
 <Footer/>
 
